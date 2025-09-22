@@ -1,0 +1,20 @@
+_____________________________________________________________
+| 22/09/2025                                          DONE WOHOOOO
+-------------------------------------------------------------
+
+afficher les balles:
+
+- boucler a travers toutes les balles et 
+  afficher un cercle a sa position et a son radius
+
+-> dans ball.c
+   une fonction ft_draw_ball(t_ball *ball)
+   et une fonction ft_draw_all_balls(t_ball_manager *ball_m)
+
+.. definir une couleur unique pour chaque balles  Raylib doc?
+
+.. faire des COMMENTAIRES PUTAIN CEST ILLISIBLE
+
+|____________________________________________________________|
+
+
