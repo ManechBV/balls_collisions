@@ -15,6 +15,8 @@ t_ball  *ft_create_ball(int x, int y, float radius)
     
     new_ball->pos = ft_create_vec(x, y);
     new_ball->radius = radius;
+    new_ball->dir = ft_create_vecf(1.0, 0.0);
+    new_ball->vel = 1.0;
     new_ball->p_next = NULL;
     new_ball->color = ft_get_random_color();
     return (new_ball);

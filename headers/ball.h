@@ -6,7 +6,9 @@
 typedef struct  s_ball
 {
     t_vec           pos;
+    t_vecf          dir;
     float           radius;
+    float           vel;
     Color           color;
     struct s_ball   *p_next;
 } t_ball;

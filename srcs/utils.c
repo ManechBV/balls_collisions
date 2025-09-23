@@ -9,6 +9,15 @@ t_vec   ft_create_vec(int x, int y)
     return (new_vec);
 }
 
+t_vecf   ft_create_vecf(float x, float y)
+{
+    t_vecf   new_vec;
+
+    new_vec.x = x;
+    new_vec.y = y;
+    return (new_vec);
+}
+
 Color   ft_get_random_color(void) 
 {
     return ((Color){
