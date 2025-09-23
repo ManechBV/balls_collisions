@@ -21,12 +21,13 @@ _____________________________________________________________
 | 23/09/2025                                                 | 
 -------------------------------------------------------------
 
-|____________________________________________________________|
-
 faire bouger les balles et les faires rebondir contre les bords:
 
 - ajouter dans la struct des t_ball un vec de mouvement normalisé,
   une variable de velocitée representant la vitesse en gros
+
+|____________________________________________________________|
+
 
 -> dans collisions.c 
    une fonction ft_check_collision_border(t_ball *ball)
