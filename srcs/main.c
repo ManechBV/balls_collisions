@@ -46,6 +46,7 @@ int main(int argc, char **argv)
 	while (!WindowShouldClose()) 
 	{
 		//Update shit
+		ft_update_balls(&ball_manager);
 
 		//Draw shit
 		BeginDrawing();

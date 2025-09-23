@@ -13,7 +13,7 @@ t_ball  *ft_create_ball(int x, int y, float radius)
     if (!new_ball)
         return (NULL);
     
-    new_ball->pos = ft_create_vec(x, y);
+    new_ball->pos = ft_create_vecf((float)x, (float)y);
     new_ball->radius = radius;
     new_ball->dir = ft_create_vecf(1.0, 0.0);
     new_ball->vel = 1.0;
@@ -47,6 +47,22 @@ void    ft_add_ball_to_chain(t_ball_manager *ball_m, int x, int y, float radius)
     new_ball->p_next = ball_m->p_balls;
     ball_m->p_balls = new_ball;
     ball_m->size++;
+}
+
+void    ft_update_balls(t_ball_manager *ball_m)
+{
+    t_ball  *current;
+
+    current = ball_m->p_balls;
+    while (current)
+    {
+        ft_reset_vecf(&(current->move_vecf));
+        ft_add_vecf(&(current->move_vecf), &(current->dir));
+        current->move_vecf.x *= current->vel;
+        current->move_vecf.y *= current->vel;
+        ft_add_vecf(&(current->pos), &(current->move_vecf));
+        current = current->p_next;
+    }
 }
 
 //Duh

@@ -5,8 +5,9 @@
 
 typedef struct  s_ball
 {
-    t_vec           pos;
+    t_vecf          pos;
     t_vecf          dir;
+    t_vecf          move_vecf;
     float           radius;
     float           vel;
     Color           color;
@@ -27,5 +28,7 @@ void            ft_init_ball_manager(t_ball_manager *ball_m);
 void            ft_free_ball_manager(t_ball_manager *ball_m);
 void            ft_add_ball_to_chain(t_ball_manager *ball_m, int x, int y, float radius);
 void            ft_draw_all_balls(t_ball_manager *ball_m);
+
+void            ft_update_balls(t_ball_manager *ball_m);
 
 #endif //BALL_H
