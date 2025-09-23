@@ -1,8 +1,10 @@
 #include <stdlib.h>
+#include <math.h>
 
 #include "raylib.h"
 #include "ball.h"
 #include "utils.h"
+#include "collisions.h"
 
 //Creates a ball and return its pointer
 t_ball  *ft_create_ball(int x, int y, float radius)
@@ -15,7 +17,11 @@ t_ball  *ft_create_ball(int x, int y, float radius)
     
     new_ball->pos = ft_create_vecf((float)x, (float)y);
     new_ball->radius = radius;
-    new_ball->dir = ft_create_vecf(1.0, 0.0);
+
+    float   rotation = (2 * PI) / 32; 
+    rotation *= (float)GetRandomValue(0, 32);
+    
+    new_ball->dir = ft_create_vecf(cosf(rotation), sinf(rotation));
     new_ball->vel = 1.0;
     new_ball->p_next = NULL;
     new_ball->color = ft_get_random_color();
@@ -56,11 +62,23 @@ void    ft_update_balls(t_ball_manager *ball_m)
     current = ball_m->p_balls;
     while (current)
     {
+        t_vecf  coll_vecf;
+
+        coll_vecf = ft_check_collision_border(current);
+        ft_resolve_collision_border(current, coll_vecf);
+
+        //Reset move vector to 0, 0
         ft_reset_vecf(&(current->move_vecf));
+
+        //Apply dir and vel to move_vecf
         ft_add_vecf(&(current->move_vecf), &(current->dir));
         current->move_vecf.x *= current->vel;
         current->move_vecf.y *= current->vel;
+
+        //Update position based on move_vecf
         ft_add_vecf(&(current->pos), &(current->move_vecf));
+
+        //Loop through the next ball
         current = current->p_next;
     }
 }

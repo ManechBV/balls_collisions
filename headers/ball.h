@@ -1,7 +1,7 @@
 #ifndef BALL_H
 # define BALL_H
 
-#include "utils.h"
+# include "utils.h"
 
 typedef struct  s_ball
 {
