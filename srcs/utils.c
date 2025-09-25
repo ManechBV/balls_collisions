@@ -89,3 +89,8 @@ void    ft_reset_vecf(t_vecf *vecf)
     vecf->x = 0;
     vecf->y = 0;
 }
+
+float   ft_dot_vecf(t_vecf *vecf1, t_vecf *vecf2)
+{
+    return (vecf1->x * vecf2->x + vecf1->y * vecf2->y);
+}

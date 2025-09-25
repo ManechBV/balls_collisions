@@ -62,11 +62,8 @@ void    ft_update_balls(t_ball_manager *ball_m)
     current = ball_m->p_balls;
     while (current)
     {
-        t_vecf  coll_vecf;
-
-        coll_vecf = ft_check_collision_border(current);
-        ft_resolve_collision_border(current, coll_vecf);
-
+        ft_check_and_resolve_border_collision(current);
+        
         //Reset move vector to 0, 0
         ft_reset_vecf(&(current->move_vecf));
 

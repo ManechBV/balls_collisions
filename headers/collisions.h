@@ -4,7 +4,6 @@
 # include "ball.h"
 # include "utils.h"
 
-t_vecf  ft_check_collision_border(t_ball *ball);
-void    ft_resolve_collision_border(t_ball *ball, t_vecf coll_vecf);
+void    ft_check_and_resolve_border_collision(t_ball *ball);
 
 #endif

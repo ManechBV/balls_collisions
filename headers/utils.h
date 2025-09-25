@@ -36,5 +36,6 @@ void    ft_sub_vecf(t_vecf *dest, t_vecf *src);
 void    ft_mul_vecf(t_vecf *dest, t_vecf *src);
 void    ft_div_vecf(t_vecf *dest, t_vecf *src);
 void    ft_reset_vecf(t_vecf *vecf);
+float   ft_dot_vecf(t_vecf *vecf1, t_vecf *vecf2);
 
 #endif //UTILS_H
